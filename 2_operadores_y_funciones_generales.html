@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Operadores y Funciones Generales | Operadores, funciones generales y funciones de agregación para consultas SQL </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Eduvirtual UNAB" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Operadores, funciones generales y funciones de agregación para consultas SQL</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li id="active"><a href="2_operadores_y_funciones_generales.html" class="active no-ch">2. Operadores y Funciones Generales</a></li>
+   <li><a href="3_funciones_de_agregacin_para_consulta_sql.html" class="no-ch">3. Funciones de Agregación para consulta SQL</a></li>
+   <li><a href="4_actividad.html" class="no-ch">4. Actividad</a></li>
+   <li><a href="5_subconsultas.html" class="no-ch">5. Subconsultas</a></li>
+   <li><a href="6_conclusiones_y_referencias.html" class="no-ch">6. Conclusiones y Referencias</a></li>
+   <li><a href="7_repasando.html" class="no-ch">7. Repasando</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_funciones_de_agregacin_para_consulta_sql.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2. Operadores y Funciones Generales</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_86" class="block iDevice_content">
+<p><img src="2.png" alt="" width="4044" height="1024" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id5">
+<div class="iDevice emphasis0" >
+<div id="ta5_118_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Los operadores SQL se utilizan para especificar comparaciones entre expresiones. Puede utilizar varios tipos de operadores SQL.</p>
+<table border="1" style="width: 100%; height: 108px;">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px; background-color: #f25e88;"><span style="color: #000000;"><strong>Elementos</strong></span></td>
+<td style="width: 50%; text-align: center; height: 18px; background-color: #f25e88;"><span style="color: #000000;"><strong>Predicados y Operadores</strong></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px;">Predicados</td>
+<td style="width: 50%; text-align: center; height: 18px;">IN, BETWEN, LIKE</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px;">Operadores de Comparación</td>
+<td style="width: 50%; text-align: center; height: 18px;">=, &gt;, &lt;, &gt;=, &lt;=, &lt;&gt;, !=, !&lt;, !&gt;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px;">Operadores Lógicos</td>
+<td style="width: 50%; text-align: center; height: 18px;">AND, OR, NOT</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px;">Operadores Aritméticos</td>
+<td style="width: 50%; text-align: center; height: 18px;">+, -, *, /, %</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; text-align: center; height: 18px;">Concatenación</td>
+<td style="width: 50%; text-align: center; height: 18px;">+</td>
+</tr>
+</tbody>
+</table>
+<p>Los predicados soportados por el lenguaje son los siguientes:</p>
+<ul>
+<li><strong>IN</strong>, utilizado para determinar si un valor coincide con cualquier valor en una lista o una subconsulta.</li>
+<li><strong>BETWEEN</strong>, utilizado para especificar un rango de valores.</li>
+<li><strong>LIKE</strong>, utilizado para que coincidan caracteres contra un patrón común del mismo.</li>
+</ul>
+<p>Ahora, debemos también tener en cuenta que los operadores incluyen varias categorías comunes y se las enuncio a continuación:</p>
+<ul>
+<li><strong>Comparativa</strong>, para probar igualdad y desigualdad de un contexto específico: =, &lt;, &gt;, &gt;=, &lt;=, !=, !&gt;, !&lt; (Se debe tener en cuenta que !&gt;, !&lt;, != ya no están soportados bajo el estándar ISO. Es una buena práctica el utilizar las opciones estándar cuando las mismas no existen.)</li>
+<li><strong>Lógica</strong>, para comprobar la validez de una condición: AND, OR, NOT.</li>
+<li><strong>Aritmética</strong>, para realizar operaciones matemáticas: +, -, *, /, % (módulo).</li>
+<li><strong>Concatenación</strong>, para combinar cadenas de caracteres: +.</li>
+<li><strong>Asignación</strong>, para el establecimiento de un valor: =.</li>
+</ul>
+<p style="text-align: justify;">Al igual que con otros ambientes matemáticos, los operadores están sujetos a normas que rigen la precedencia. La siguiente tabla describe el orden en que los operadores se evalúan, y estos son importantes tenerlos en cuenta a la hora de programar, utilizándolos:</p>
+<table border="1" style="width: 100%; height: 157px;">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 28.396%; background-color: #f25e88; height: 18px; text-align: center;"><span style="color: #000000;"><strong>Orden de Evaluación</strong></span></td>
+<td style="width: 71.604%; background-color: #f25e88; height: 18px; text-align: center;"><span style="color: #000000;"><strong>Operador</strong></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">1</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">() Parentesis</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">2</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">*, /, % (Multiplicación, División, Módulo)</td>
+</tr>
+<tr style="height: 13px;">
+<td style="width: 28.396%; height: 13px; text-align: center;">3</td>
+<td style="width: 71.604%; height: 13px; text-align: center;">+, - (Añadir / Positivo / Concatenar, Substracción / Negativo)</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">4</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">=, &lt;, &gt;, &lt;=, &gt;=, &lt;&gt;, !=, !&gt;, !&lt; (Comparación)</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">5</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">NOT</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">6</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">AND</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">7</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">BETWEN, IN, LIKE, OR</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 28.396%; height: 18px; text-align: center;">8</td>
+<td style="width: 71.604%; height: 18px; text-align: center;">= (Asignación)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_funciones_de_agregacin_para_consulta_sql.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_adultos_js.js"></script></body></html>
